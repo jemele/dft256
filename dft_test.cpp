@@ -13,7 +13,7 @@ OUTPUT:
 #include <math.h>
 #include "dft.h"
 
-DTYPE In_R[SIZE], In_I[SIZE];
+DTYPE In_R[SIZE], In_I[SIZE], oreal[SIZE], oimag[SIZE];
 
 int main()
 {
@@ -24,13 +24,22 @@ int main()
 	{
 		In_R[i] = i;
 		In_I[i] = 0.0;
+		oreal[i] = 0;
+		oimag[i] = 0;
 
 	}
 	
 
 
 	//Perform DFT
-	dft(In_R, In_I);
+//shour nows
+	dft(In_R, In_I, oreal, oimag);
+
+	for(int k = 0; k < SIZE; k++) {
+		In_R[k] = oreal[k];
+		In_I[k] = oimag[k];
+    }
+
 	//Print output
 	fp=fopen("out.dat", "w");
 	printf("\nPrinting DFT Output\n");

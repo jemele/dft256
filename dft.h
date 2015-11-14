@@ -1,5 +1,5 @@
 
 typedef float DTYPE;
 #define SIZE 256 		/* SIZE OF DFT */
-void dft(DTYPE XX_R[SIZE], DTYPE XX_I[SIZE]);
+void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE], DTYPE outreal[SIZE], DTYPE outimag[SIZE]);
 
